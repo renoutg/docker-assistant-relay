@@ -1,5 +1,5 @@
 FROM node:8-alpine
-LABEL maintainer "Kyle Lucy <kmlucy@gmail.com>"
+LABEL maintainer "Renout Gerrits <mail@renout.nl>"
 
 RUN apk add --no-cache git && \
 	git clone https://github.com/greghesp/assistant-relay.git && \
@@ -7,8 +7,7 @@ RUN apk add --no-cache git && \
 	npm install && \
 	apk del git
 
-VOLUME /assistant-relay/server/configurations/secrets
-VOLUME /assistant-relay/server/configurations/tokens
+VOLUME /assistant-relay/server/configurations/
 EXPOSE 3000
 
 WORKDIR /assistant-relay
